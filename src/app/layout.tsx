@@ -21,13 +21,11 @@ export default function RootLayout({
     <html lang="ru">
       <Providers>
         <body className={inter.className}>
-          {/* <Header/> */}
           <main>
              <AuthCheck>
                 {children}
              </AuthCheck>
           </main>
-          {/* <Footer /> */}
         </body>
       </Providers>
     </html>

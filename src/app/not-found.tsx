@@ -5,7 +5,7 @@ const NotFoundPage = () => {
     return (
         <div>
             <h1>Error page</h1>
-            <Link href={'/'}><h2>Перейти на основную страницу</h2></Link>
+            <Link href={'/home'}><h2>Перейти на основную страницу</h2></Link>
         </div>
     );
 };

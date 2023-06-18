@@ -21,7 +21,7 @@ export default function AuthCheck({
       // router.push('/login')
       // }
     } else { 
-      router.push('/login')
+      router.push('/')
     }
   }, [])
 
