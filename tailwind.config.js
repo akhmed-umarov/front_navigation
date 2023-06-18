@@ -12,6 +12,11 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      spacing: { 
+        "7vh": "7vh",
+        "9vh": "9vh",
+        "100vw": "100vw",
+      }
     },
   },
   plugins: [],
