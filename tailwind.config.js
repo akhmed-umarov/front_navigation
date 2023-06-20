@@ -16,6 +16,7 @@ module.exports = {
         "7vh": "7vh",
         "9vh": "9vh",
         "100vw": "100vw",
+        "100vh": "100vh",
       }
     },
   },

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios  from "axios";
 import { API_URL } from "@/http";
 import AuthService from "@/services/auth.service";
 import type { AuthResponse } from "@/types/AuthResponce";
@@ -9,6 +9,8 @@ const initialState = {
   user: {} as IUser,
   isLoading: false,
   isAuth: false,
+  isError: false,
+  errorMessage: '',
 };
 
 export const login = createAsyncThunk<
@@ -16,9 +18,17 @@ export const login = createAsyncThunk<
   { email: string; password: string },
   { rejectValue: string }
 >("user/login", async ({ email, password }) => {
-  const response = await AuthService.login(email, password);
-  localStorage.setItem("token", response.data.accessToken);
-  return response.data.user;
+  try { 
+    const response = await AuthService.login(email, password);
+    localStorage.setItem("token", response.data.accessToken);
+    return response.data.user;
+  } catch (err ){ 
+    if (axios.isAxiosError(err)) {
+      console.log(err.response!.data.message);
+      throw new Error(err.response!.data.message);
+    }
+    throw new Error('Нереальная ошибка')
+  }
 });
 
 export const registration = createAsyncThunk<
@@ -26,9 +36,17 @@ export const registration = createAsyncThunk<
    {email: string, password: string} ,
   { rejectValue: string }
 >("user/registration", async ( {email, password} ) => {
-  const response = await AuthService.registration(email, password);
-  localStorage.setItem("token", response.data.accessToken);
-  return response.data.user;
+  try { 
+    const response = await AuthService.registration(email, password);
+    localStorage.setItem("token", response.data.accessToken);
+    return response.data.user;
+  } catch (err) { 
+    if (axios.isAxiosError(err)) {
+      console.log(err.response!.data.message);
+      throw new Error(err.response!.data.message);
+    }
+    throw new Error('Нереальная ошибка')
+  }
 });
 
 export const logout = createAsyncThunk<
@@ -71,13 +89,37 @@ const productSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(login.pending, (state, action) => {
+        state.isLoading = true;
+        state.errorMessage = ''
+        state.isError = false;
+      })
       .addCase(login.fulfilled, (state, action) => {
         state.isAuth = true;
         state.user = action.payload
+        state.isLoading = false;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.isAuth = false;
+        state.isLoading = false;
+        state.errorMessage = action.error.message!
+        state.isError = true;
+      })
+      .addCase(registration.pending, (state, action) => {
+        state.isLoading = true;
+        state.errorMessage = ''
+        state.isError = false;
       })
       .addCase(registration.fulfilled, (state, action) => {
         state.isAuth = true;
-        state.user = action.payload
+        state.user = action.payload!
+        state.isLoading = false;
+      })
+      .addCase(registration.rejected, (state, action) => {
+        state.isAuth = false;
+        state.isLoading = false;
+        state.errorMessage = action.error.message!
+        state.isError = true;
       })
       .addCase(logout.fulfilled, (state) => {
         state.isAuth = false;

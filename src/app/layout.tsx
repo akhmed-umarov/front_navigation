@@ -19,15 +19,15 @@ export default function RootLayout({
 
   return (
     <html lang="ru">
-      <Providers>
-        <body className={inter.className}>
+      <body className={inter.className}>
+        <Providers>
           <main>
-             <AuthCheck>
-                {children}
-             </AuthCheck>
+            <AuthCheck>
+              {children}
+            </AuthCheck>
           </main>
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   )
 }

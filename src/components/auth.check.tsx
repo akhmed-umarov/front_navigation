@@ -11,19 +11,18 @@ export default function AuthCheck({
 }) {
   const dispatch = useAppDispatch()
   const router = useRouter()
-  // const isAuth = useAppSelector(store => store.auth.isAuth)
+  const user = useAppSelector(store => store.auth.user)
+  const isAuth = useAppSelector(store => store.auth.isAuth)
   
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
       dispatch(checkAuth())
-      // if (!isAuth) { 
-      // router.push('/login')
-      // }
+      user.isActivated === false ? router.push('/actived') : null
     } else { 
       router.push('/')
     }
-  }, [])
+  }, [isAuth])
 
   return (
     <div>

@@ -2,6 +2,8 @@
 
 import { Provider } from "react-redux"
 import store from '@/store/index'
+import { CacheProvider } from '@chakra-ui/next-js'
+import { ChakraProvider } from '@chakra-ui/react'
 
 export function Providers({
     children
@@ -9,7 +11,11 @@ export function Providers({
 
     return (
         <Provider store={store}>
-            {children}
+            <CacheProvider>
+                <ChakraProvider>
+                    {children}
+                </ChakraProvider>
+            </CacheProvider>
         </Provider>
     )
 }

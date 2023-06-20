@@ -1,70 +1,81 @@
 'use client'
 import { useState, useEffect } from "react";
-// import UserService from "@/services/user.service";
-// import type { IUser } from "@/types/IUser";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
-import { login, registration, logout } from "@/store/slice/auth.slice";
+import { login, registration } from "@/store/slice/auth.slice";
 import { useRouter } from 'next/navigation'
+import { Input, InputGroup, InputRightElement, Button } from '@chakra-ui/react'
 
-export default function Home() {
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
-  // const [users, setUsers] = useState<IUser[]>([]);
+
+export default function Login() {
+
   const dispatch = useAppDispatch()
   const isLoading = useAppSelector(store => store.auth.isLoading)
-  // const user = useAppSelector(store => store.auth.user)
   const isAuth = useAppSelector(store => store.auth.isAuth)
+  const isError = useAppSelector(store => store.auth.isError)
+  const errorMessage = useAppSelector(store => store.auth.errorMessage)
   const router = useRouter()
 
-  useEffect(()=>{ 
-    if (isAuth) { 
-    router.push('/home')
+  const [email, setEmail] = useState<string>('')
+  const [password, setPassword] = useState<string>('')
+  const [showPassword, setShowPassword] = useState(false)
+  const handleClick = () => setShowPassword(!showPassword)
+
+  useEffect(() => {
+    if (isAuth) {
+      router.push('/home')
     }
-  }, [isAuth])  
-
-  // async function getUsers() {
-  //   try {
-  //     const response = await UserService.fetchUsers();
-  //     setUsers(response.data);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-
-  if (isLoading) {
-    return <div>Загрузка...</div>
-  }
-
-
+  }, [isAuth])
 
   if (!isAuth) {
     return (
-        <div>
-          <input
-            onChange={e => setEmail(e.target.value)}
+      <div className="flex w-100vw h-100vh justify-center items-center ">
+        <div className="flex max-w-max w-1/2 flex-col">
+          <div className="flex justify-center items-center">
+            <h1 className="text-2xl">Авторизация</h1>
+          </div>
+          <span className="h-20 flex justify-center items-center">
+           <p className={`text-xs text-red-600 ${isError ? 'opacity-100' : 'opacity-0'}` } >{errorMessage}</p>
+          </span>
+          <div>
+          <Input
             value={email}
+            disabled={isLoading}
+            onChange={e => setEmail(e.target.value)}
+            pr='4.5rem'
             type="text"
             placeholder='Email'
+            className="mb-6"
+            id="email"
           />
-          <input
-            onChange={e => setPassword(e.target.value)}
-            value={password}
-            type="password"
-            placeholder='Пароль'
-          />
-          <button onClick={() => dispatch(login({ email, password }))}>
-            Логин
-          </button>
-          <button onClick={() => dispatch(registration({ email, password }))}>
+          </div>
+          <InputGroup size='md' className="mb-6">
+            <Input
+              disabled={isLoading}
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              pr='4.5rem'
+              type={showPassword ? 'text' : 'password'}
+              placeholder='Пароль'
+            />
+            <InputRightElement width='4.5rem'>
+              <Button h='1.75rem' size='xs' onClick={handleClick}>
+                {showPassword ? 'Скрыть' : 'Показать'}
+              </Button>
+            </InputRightElement>
+          </InputGroup>
+          <Button className="mb-5" colorScheme='blue' variant='outline' isLoading={isLoading} onClick={() => dispatch(login({ email, password }))}>
+            Вход
+          </Button>
+          <Button className="mb-5" colorScheme='blue' variant='outline' isLoading={isLoading} onClick={() => dispatch(registration({ email, password }))}>
             Регистрация
-          </button>
+          </Button>
         </div>
+      </div>
     );
   }
 
   return (
-      <div>Загрузка...</div>
-
+    <div></div>
     // <div>
     //   <h1>{isAuth ? `Пользователь авторизован ${user.email}` : 'АВТОРИЗУЙТЕСЬ'}</h1>
     //   <h1>{user.isActivated ? 'Аккаунт подтвержден по почте' : 'ПОДТВЕРДИТЕ АККАУНТ!!!!'}</h1>
