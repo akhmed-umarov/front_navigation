@@ -6,6 +6,10 @@ export const API_URL = `https://back-navigation.onrender.com/api`;
 const $api = axios.create({
   withCredentials: true,
   baseURL: API_URL,
+  headers: { 
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  }
 });
 
 $api.interceptors.request.use((config) => {
