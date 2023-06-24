@@ -2,12 +2,12 @@
 import GoBack from "./go-back/go-back"
 import Navbar from "./navbar/navbar"
 
-async function getData() {
-    const responce = await fetch("https://jsonplaceholder.typicode.com/todos/1", {
-        cache: 'force-cache'
-    })
-    return responce.json()
-}
+// async function getData() {
+//     const responce = await fetch("https://jsonplaceholder.typicode.com/todos/1", {
+//         cache: 'force-cache'
+//     })
+//     return responce.json()
+// }
 
 type Props = {
     navbarMode?: boolean
