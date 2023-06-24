@@ -1,20 +1,18 @@
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
 import { PredmetSwiper } from "@/components/predmet-swiper/predmet-swiper"
+import type { ISimplePredmet } from "@/types/IPredmet"
 
-// async function getData () {
-//     const response = await fetch()
-// }
+async function getPredmets() {
+    const response = await fetch(`${process.env.URL}/predmets`)
+    return await response.json() as ISimplePredmet[]
+}
 
 export const metadata = {
     title: 'Главная страница'
 }
-export default function Home() {
-    const predmetsArray = [
-        { title: 'Информатика', style: '' , link: 'informatic'},
-        { title: 'Математика', style: '' , link: 'maths'},
-        { title: 'Физика', style: '' , link: 'physics'}
-    ]
+export default async function Home() {
+    const predmetsArray = await getPredmets()
     return (
         <>
             <Header titlePage={'Главная'} />

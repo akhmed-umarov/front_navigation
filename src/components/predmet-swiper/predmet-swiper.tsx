@@ -1,7 +1,7 @@
 'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Link from 'next/link'
-import styled from './predmet-swiper.module.scss'
+// import styled from './predmet-swiper.module.scss'
 import 'swiper/css'
 
 // async function getData() {
@@ -37,8 +37,6 @@ export const PredmetSwiper = ({ predmetsArray }: Props) => {
                 slidesPerView={1}
                 loop={true}
                 scrollbar={{ draggable: true }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
             >
                 {predmetsArray.map((predmet)=>(
                 <SwiperSlide key={predmet.title}>
