@@ -4,7 +4,7 @@ import { AuthResponse } from "../types/AuthResponce";
 export const API_URL = `https://back-navigation.onrender.com/api`;
 
 const $api = axios.create({
-  // withCredentials: true,
+  withCredentials: true,
   baseURL: API_URL,
   headers: { 
     "Access-Control-Allow-Origin": "*",
