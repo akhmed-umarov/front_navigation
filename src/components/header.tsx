@@ -1,3 +1,4 @@
+'use client'
 import GoBack from "./go-back/go-back"
 import Navbar from "./navbar/navbar"
 

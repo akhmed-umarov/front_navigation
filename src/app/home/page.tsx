@@ -5,6 +5,7 @@ import type { ISimplePredmet } from "@/types/IPredmet"
 
 async function getPredmets() {
     const response = await fetch(`${process.env.URL}/predmets`)
+    console.log(response);
     return await response.json() as ISimplePredmet[]
 }
 
@@ -12,7 +13,7 @@ export const metadata = {
     title: 'Главная страница'
 }
 export default async function Home() {
-    const predmetsArray = await getPredmets()
+    // const predmetsArray = await getPredmets()
     return (
         <>
             <Header titlePage={'Главная'} />
@@ -21,7 +22,7 @@ export default async function Home() {
                     <h1>Для текста</h1>
                 </div>
                 <div className="w-2/3 h-2/3">
-                    <PredmetSwiper predmetsArray={predmetsArray}/>
+                    {/* <PredmetSwiper predmetsArray={predmetsArray}/> */}
                 </div>
             </div>
             <Footer />
