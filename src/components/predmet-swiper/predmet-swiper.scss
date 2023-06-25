@@ -1,6 +1,6 @@
 .swiper-slide-active { 
     & .my-slide { 
-        @apply duration-300 scale-100 ;
+        @apply duration-700 scale-100 ;
         &-block {
             border-radius: 35%;
         }
@@ -10,7 +10,7 @@
 .my-slide { 
     height: 50vh;
     width: 70vw;
-    @apply m-auto duration-300 flex justify-center items-center scale-50;
+    @apply duration-700 m-auto flex justify-center items-center scale-50;
     &-block {
         @apply shadow-2xl hover:shadow-sm hover:font-extrabold w-50vw h-30vh px-5 py-8 duration-500 justify-center flex items-center;
         border-radius: 50%;
