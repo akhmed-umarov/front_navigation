@@ -19,10 +19,12 @@ export default async function Home() {
         <div className=" h-max-h-screen overflow-hidden">
             <Header titlePage={'Главная страница приложения'} />
             <div className="mt-7vh flex flex-col justify-center items-center h-86vh w-100vw">
-                {/* <TextBlock text={'Для текста'}/> */}
-                <div className="bg-blue-300 w-2/3 h-1/5 mb-5">
-                    <h1>Для текста</h1>
+                <div className="w-3/4 ">
+                <TextBlock text={'Наше приложение предназначено для того чтобы вы смогли получить знания в тех сферах которые вам интересны'}/>
                 </div>
+                {/* <div className="bg-blue-300 w-2/3 h-1/5 mb-5">
+                    <h1>Для текста</h1>
+                </div> */}
                 <div className="w-100vw h-2/3">
                     <PredmetSwiper predmetsArray={predmetsArray}/>
                 </div>

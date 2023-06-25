@@ -1,33 +1,44 @@
 'use client'
-import { motion } from "framer-motion";
-import './text-block.scss'
+import { motion } from 'framer-motion';
 
-interface TextBlockProps {
-    text: string
-}
+const TextBlock = ({ text } : { text: string}) => {
 
-const TextBlock = ({ text }: TextBlockProps) => {
-    const textVariants = {
-        offscreen: {
-            y: 300,
-            opacity: 0,
-        },
-        onscreen: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                type: "spring",
-                bounce: 0.4,
-                duration: 2
-            }
-        }
-    };
-    return (
-        <motion.section className='text-block'
-            variants={textVariants}>
-            <p>{text}</p>
-        </motion.section>
-    );
+  const textArray = text.split('');
+
+  const containerVariants = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  return (
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className='font-medium text-lg'
+    >
+      {textArray.map((letter, index) => (
+        <motion.span
+          key={index}
+          variants={letterVariants}
+        >
+          {letter}
+        </motion.span>
+      ))}
+    </motion.div>
+  );
 };
-
 export default TextBlock;
