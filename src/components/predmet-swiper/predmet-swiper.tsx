@@ -22,7 +22,7 @@ export const PredmetSwiper = ({ predmetsArray }: Props) => {
                 loop={true}
                 scrollbar={{ draggable: true }} 
                 autoplay={{delay: 10000}}
-                speed={1000}
+                speed={500}
             >
                 {predmetsArray.map((predmet) => (
                     <SwiperSlide key={predmet.title} >
