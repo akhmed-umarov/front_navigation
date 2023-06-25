@@ -26,7 +26,7 @@ export const Header = ({ navbarMode = false, navbarClick = () => { console.log('
             <div className={`${navbarMode ? '' : 'opacity-0'} w-5 h-5 bg-white`}>
                 <Navbar/>
                 {/* не забыть добавить клиентский компоент вместо  */}
-                <h1 onClick={navbarClick}>Na</h1>           
+                {/* <h1 onClick={navbarClick}>Na</h1>            */}
             </div>
             <div className="text-xl">
                 {titlePage}
@@ -34,7 +34,7 @@ export const Header = ({ navbarMode = false, navbarClick = () => { console.log('
             <div className={`${backMode ? '' : 'opacity-0'} w-5 h-5 bg-white`}>
                 <GoBack linkBack="home"/>
                 {/* не забыть добавить клиентский компоент вместо  */}
-                <h1 onClick={backClick}>Ba</h1>
+                {/* <h1 onClick={backClick}>Ba</h1> */}
             </div>
         </header>
     )

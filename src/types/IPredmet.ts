@@ -15,6 +15,5 @@ export interface IPredmet {
 
 export type ISimplePredmet = {
   title: string;
-  style: string;
   link: string;
 };

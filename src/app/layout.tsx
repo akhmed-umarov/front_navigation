@@ -6,7 +6,7 @@ import AuthCheck from '@/components/auth.check'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'ЧГУ диплом',
+  title: 'ГГНТУ диплом',
   description: 'Студент Умаров Ильяс',
 }
 
