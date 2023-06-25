@@ -22,7 +22,7 @@ export const PredmetSwiper = ({ predmetsArray }: Props) => {
                 loop={true}
                 scrollbar={{ draggable: true }} 
                 autoplay={{delay: 10000}}
-                speed={500}
+                // speed={500}
             >
                 {predmetsArray.map((predmet) => (
                     <SwiperSlide key={predmet.title} >
@@ -30,14 +30,6 @@ export const PredmetSwiper = ({ predmetsArray }: Props) => {
                             <Link href={`/${predmet.link}`}>
                                 <motion.div
                                     className={`my-slide-block ${predmet.title === 'Физика' ? 'bg-violet-400' : predmet.title === 'Математика' ? 'bg-blue-300' : 'bg-orange-300'}`}
-                                    transition={{
-                                        duration: 0.3,
-                                        ease: "easeInOut",
-                                      }}
-                                    whileHover={{     
-                                        scale: [1 , 1.2],
-                                  }}
-                                    whileTap={{ scale: 0.9 }}
                                 >
                                     <h1 className=' text-white text-3xl'>{predmet.title}</h1>
                                 </motion.div>
