@@ -8,8 +8,7 @@
 export const Footer = async ()=>{ 
     // const data = await getData()
     return ( 
-        <footer className="flex fixed bottom-0 left-0 h-7vh w-100vw bg-orange-300">
-
+        <footer className="bg-blue-700 shadow-2xl rounded-t-xl flex fixed bottom-0 left-0 h-7vh w-100vw ">
         </footer>
     )
 }

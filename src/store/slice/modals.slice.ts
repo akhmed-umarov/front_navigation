@@ -8,6 +8,9 @@ const ModalsSlice = createSlice({
   name: "modals",
   initialState,
   reducers: {
+    closeEvery: (state) => {
+      state.navbar = false;
+    },
     toggleNavbar: (state) => {
       state.navbar = !state.navbar;
     },
@@ -16,4 +19,4 @@ const ModalsSlice = createSlice({
 
 export default ModalsSlice.reducer;
 
-export const { toggleNavbar } = ModalsSlice.actions;
+export const { toggleNavbar , closeEvery } = ModalsSlice.actions;

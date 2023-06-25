@@ -23,7 +23,7 @@ export default function Actived() {
     
     return (
         <>
-            <div className="w-100vw h-100vh flex justify-center items-center">
+            <div className="w-100vw h-100vh flex justify-center items-center bg-white">
                 {!user.email ? null :
                     <div>
                         <div className="flex justify-center items-center flex-col">

@@ -1,6 +1,6 @@
 'use client'
 import GoBack from "./go-back/go-back"
-import Navbar from "./navbar/navbar"
+import NavbarIcon from "./navbar-icon/navbar-icon"
 
 // async function getData() {
 //     const responce = await fetch("https://jsonplaceholder.typicode.com/todos/1", {
@@ -11,30 +11,24 @@ import Navbar from "./navbar/navbar"
 
 type Props = {
     navbarMode?: boolean
-    navbarClick?: () => void
     backMode?: boolean
-    backClick?: () => void
     titlePage: string
 }
 
 //async так как сервак
-export const Header = ({ navbarMode = false, navbarClick = () => { console.log('navbar') }, titlePage, backMode = false, backClick = () => { console.log('back') } }: Props) => {
+export const Header = ({ navbarMode = false , titlePage, backMode = false  }: Props) => {
     // const data = await getData()
     // console.log(data);
     return (
-        <header className="flex fixed top-0 left-0 h-7vh w-100vw bg-blue-300 flex-row justify-between items-center px-5">
-            <div className={`${navbarMode ? '' : 'opacity-0'} w-5 h-5 bg-white`}>
-                <Navbar/>
-                {/* не забыть добавить клиентский компоент вместо  */}
-                {/* <h1 onClick={navbarClick}>Na</h1>            */}
+        <header className="flex fixed top-0 left-0 h-7vh w-100vw shadow-2xl rounded-b-xl bg-blue-700 flex-row justify-between items-center px-5">
+            <div className={`${backMode ? '' : 'opacity-0'} w-5 h-5 `}>
+                <GoBack linkBack="/"/>
             </div>
-            <div className="text-xl">
+            <div className="text-xl text-white">
                 {titlePage}
             </div>
-            <div className={`${backMode ? '' : 'opacity-0'} w-5 h-5 bg-white`}>
-                <GoBack linkBack="home"/>
-                {/* не забыть добавить клиентский компоент вместо  */}
-                {/* <h1 onClick={backClick}>Ba</h1> */}
+            <div className={`${navbarMode ? '' : 'opacity-0'}`}>
+                <NavbarIcon/>
             </div>
         </header>
     )
