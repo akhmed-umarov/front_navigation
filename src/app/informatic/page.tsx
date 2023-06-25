@@ -7,15 +7,15 @@ export const metadata = {
 }
 
 
-async function getDataInformatic() {
-    const res = await fetch(`${process.env.URL}/informatic`, { cache: 'force-cache' });
-    return await res.json() as IPredmet;
-}
+// async function getDataInformatic() {
+//     const res = await fetch(`${process.env.URL}/informatic`, { cache: 'force-cache' });
+//     return await res.json() as IPredmet;
+// }
 
-async function getDataPredmets() {
-    const predmetsRes = await fetch(`${process.env.URL}/predmets`);
-    return await predmetsRes.json() as ISimplePredmet[];
-}
+// async function getDataPredmets() {
+//     const predmetsRes = await fetch(`${process.env.URL}/predmets`);
+//     return await predmetsRes.json() as ISimplePredmet[];
+// }
 
 export default async  function Psysics() {
 

@@ -1,22 +1,22 @@
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
-import type { IPredmet, ISimplePredmet } from "@/types/IPredmet";
+// import type { IPredmet, ISimplePredmet } from "@/types/IPredmet";
 
 export const metadata = {
     title: 'Математика'
 }
 
 
-async function getDataMaths() {
-    const res = await fetch(`${process.env.URL}/maths`, { cache: 'force-cache' });
-    return await res.json() as IPredmet;
-}
+// async function getDataMaths() {
+//     const res = await fetch(`${process.env.URL}/maths`, { cache: 'force-cache' });
+//     return await res.json() as IPredmet;
+// }
 
-async function getDataPredmets() {
-    const predmetsRes = await fetch(`${process.env.URL}/predmets`);
-    return await predmetsRes.json() as ISimplePredmet[];
+// async function getDataPredmets() {
+//     const predmetsRes = await fetch(`${process.env.URL}/predmets`);
+//     return await predmetsRes.json() as ISimplePredmet[];
 
-}
+// }
 
 export default async function Psysics() {
 

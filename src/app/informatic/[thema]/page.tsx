@@ -31,7 +31,7 @@
 // //любое название
 const ThemaPage = () => {
     return (
-        <h1>Thema Phisycs</h1>
+        <h1>Thema Informatic</h1>
     );
 };
 

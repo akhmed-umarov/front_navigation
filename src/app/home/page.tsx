@@ -1,25 +1,19 @@
+import { PredmetSwiper } from "@/components/predmet-swiper/predmet-swiper"
+import TextBlock from "@/components/text-block/text-block"
+import type { ISimplePredmet } from "@/types/IPredmet"
+import Navbar from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
-import { PredmetSwiper } from "@/components/predmet-swiper/predmet-swiper"
-import type { ISimplePredmet } from "@/types/IPredmet"
-import TextBlock from "@/components/text-block/text-block"
-import Navbar from "@/components/navbar/navbar"
 
 async function getPredmets() {
     const response = await fetch(`${process.env.URL}/predmets`)
-    //  { 
-        // next: { 
-        //     revalidate: 10
-        // }
-    // }
-    
-
     return await response.json() as ISimplePredmet[]
 }
 
 export const metadata = {
     title: 'Главная страница'
 }
+
 export default async function Home() {
     const predmetsArray = await getPredmets()
     return (
