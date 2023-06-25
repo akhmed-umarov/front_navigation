@@ -25,8 +25,8 @@ export default function AuthCheck({
   }, [isAuth])
 
   return (
-    <div>
+    <>
       {children}
-    </div>
+    </>
   )
 }

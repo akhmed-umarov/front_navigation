@@ -28,7 +28,7 @@ export default function Login() {
 
   if (!isAuth) {
     return (
-      <div className="flex w-100vw h-100vh justify-center items-center ">
+      <div className="flex w-100vw h-93vh justify-center items-center ">
         <div className="flex max-w-max w-1/2 flex-col">
           <div className="flex justify-center items-center">
             <h1 className="text-2xl">Авторизация</h1>

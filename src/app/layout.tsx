@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className={inter.className}>
         <Providers>
-          <main className=' overflow-hidden'>
+          <main className='overflow-hidden'>
             <AuthCheck>
               {children}
             </AuthCheck>
