@@ -4,6 +4,7 @@ import type { ISimplePredmet } from "@/types/IPredmet"
 import Navbar from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header"
+import Link from "next/link"
 
 async function getPredmets() {
     const response = await fetch(`${process.env.URL}/predmets`)
@@ -19,6 +20,16 @@ export default async function Home() {
     return (
         <>
             <Navbar>
+                <nav className="flex flex-col w-full h-full justify-center items-center">
+                    {predmetsArray.map(predmet => (
+                        <Link href={`/${predmet.link}`} key={predmet.title}>
+                            <div className=" my-8 font-semibold " >
+                                <h2>{predmet.title}</h2>
+                            </div>
+                        </Link>
+
+                    ))}
+                </nav>
             </Navbar>
             <div className=" h-max-h-screen overflow-hidden">
                 <Header navbarMode={true} titlePage={'Главная страница приложения'} />
