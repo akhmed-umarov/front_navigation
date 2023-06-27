@@ -14,7 +14,6 @@ export default function Login() {
   const isError = useAppSelector(store => store.auth.isError)
   const errorMessage = useAppSelector(store => store.auth.errorMessage)
   const router = useRouter()
-
   const [email, setEmail] = useState<string>('')
   const [password, setPassword] = useState<string>('')
   const [showPassword, setShowPassword] = useState(false)
