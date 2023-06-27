@@ -1,5 +1,5 @@
 .switch {
-  width: 13vw;
+  width: 25vw;
   height: 5vh;
   background-color: rgba(255, 255, 255, 0.4);
   display: flex;
@@ -7,6 +7,9 @@
   align-items: center;
   border-radius: 50px;
   padding: 10px;
+  @media (min-width: 750px) { 
+  width: 13vw;
+  }
 }
 
 .switch[data-isOn="true"] {
@@ -20,8 +23,11 @@
 }
 
 .handle {
-  width: 4vw;
+  width: 8.5vw;
   height: 4vh;
   background-color: white;
   border-radius: 40px;
+  @media (min-width: 750px) { 
+  width: 4vw;
+  }
 }
