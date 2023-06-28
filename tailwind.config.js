@@ -26,6 +26,7 @@ module.exports = {
         "10vw": "10vw",
         "25vw": "25vw",
         "50vw": "50vw",
+        "70vw": "70vw",
         "90vw": "90vw",
         "100vw": "100vw",
       },

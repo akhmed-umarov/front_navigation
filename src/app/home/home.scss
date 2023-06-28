@@ -1,0 +1,6 @@
+.navbar { 
+    @apply flex flex-1 flex-col w-full h-full mt-5;
+    &_link { 
+        @apply py-3 font-semibold border-b-2 flex justify-center;
+    }
+}

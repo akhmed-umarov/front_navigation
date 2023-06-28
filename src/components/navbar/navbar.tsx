@@ -3,10 +3,16 @@ import { motion as m } from 'framer-motion';
 import styled from './navbar.module.scss';
 import { closeEvery } from '@/store/slice/modals.slice';
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import { useEffect } from 'react';
 
 const Navbar = ({ children }: { children: React.ReactNode }) => {
   const position = useAppSelector(state => state.modals.navbar);
   const dispatch = useAppDispatch()
+
+  useEffect(()=>{ 
+    dispatch(closeEvery())
+  }, [])
+  
   return (
     <m.nav
       className={styled.navbar}

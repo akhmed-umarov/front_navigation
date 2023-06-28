@@ -15,7 +15,7 @@ const NavbarIcon = () => {
   };
 
   return (
-    <div className="switch" data-isOn={position} onClick={() => dispatch(toggleNavbar())}>
+    <div className={`switch ${position ? 'true' : ''}`}  onClick={() => dispatch(toggleNavbar())}>
       <motion.div className="handle" layout transition={spring} />
     </div>
   );

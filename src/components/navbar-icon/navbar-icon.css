@@ -12,7 +12,7 @@
   }
 }
 
-.switch[data-isOn="true"] {
+.switch.true {
   justify-content: flex-start;
   background-color: rgb(149, 149, 208);
   transition: background-color 0.4s ease 0s;

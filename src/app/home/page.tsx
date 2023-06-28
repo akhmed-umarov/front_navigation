@@ -3,11 +3,15 @@ import TextBlock from "@/components/text-block/text-block"
 import type { ISimplePredmet } from "@/types/IPredmet"
 import Navbar from "@/components/navbar/navbar"
 import { Footer } from "@/components/footer"
-import { Header } from "@/components/header"
+import { Header } from "@/components/header/header"
 import Link from "next/link"
+import UserInfo from "@/components/user-info/user-info"
+import './home.scss' 
 
 async function getPredmets() {
-    const response = await fetch(`${process.env.URL}/predmets`)
+    const response = await fetch(`${process.env.URL}/predmets`, {
+        cache: 'force-cache'
+    })
     return await response.json() as ISimplePredmet[]
 }
 
@@ -19,20 +23,20 @@ export default async function Home() {
     const predmetsArray = await getPredmets()
     return (
         <>
+            <Header navbarMode={true} titlePage={'Главная страница приложения'} />
             <Navbar>
-                <nav className="flex flex-col w-full h-full justify-center items-center">
+                <UserInfo />
+                <nav className="navbar">
                     {predmetsArray.map(predmet => (
-                        <Link href={`/${predmet.link}`} key={predmet.title}>
-                            <div className=" my-8 font-semibold " >
+                        <Link key={predmet.title} href={`/${predmet.link}`} >
+                            <div className="navbar_link" >
                                 <h2>{predmet.title}</h2>
                             </div>
                         </Link>
-
                     ))}
                 </nav>
             </Navbar>
             <div className=" h-max-h-screen overflow-hidden">
-                <Header navbarMode={true} titlePage={'Главная страница приложения'} />
                 <div className="mt-7vh flex flex-col justify-center items-center h-86vh w-100vw">
                     <div className="w-3/4 ">
                         <TextBlock text={'Наше приложение предназначено для того чтобы вы смогли получить знания в тех сферах которые вам интересны'} />

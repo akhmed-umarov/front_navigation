@@ -6,15 +6,20 @@ export enum PredmetName {
 
 import type IThemas from "./IThemas";
 
+export type IThemasInPredmet = { 
+  title: string,
+  link: string
+}
+
 export interface IPredmet {
   themas: Omit<IThemas, "body" | "predmet" | "imgUrl">[];
   description: string;
-  imagUrl: string;
+  imgUrl: string;
   title: string;
 }
 
 export type ISimplePredmet = {
   title: string;
-  imagUrl: string;
+  imgUrl: string;
   link: string;
 };

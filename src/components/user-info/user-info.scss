@@ -1,0 +1,6 @@
+.user_block { 
+    @apply w-25vw border-b-2 flex justify-center items-center flex-col; 
+    @media (max-width: 820px) { 
+        @apply w-70vw;
+    }
+}
