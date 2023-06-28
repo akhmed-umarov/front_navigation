@@ -1,5 +1,5 @@
 'use client'
-import './header.module.scss'
+import styled from './header.module.scss'
 import GoBack from "../go-back/go-back"
 import NavbarIcon from "../navbar-icon/navbar-icon"
 
@@ -22,8 +22,8 @@ export const Header = ({ navbarMode = false, titlePage, backMode = false, backLi
     // const data = await getData()
     // console.log(data);
     return (
-        <header className="header">
-            <div className="header_contain">
+        <header className={styled.header}>
+            <div className={styled.header_contain}>
                 <div className={`${backMode ? '' : 'hidden'}`}>
                     <GoBack linkBack={backLink} />
                 </div>
