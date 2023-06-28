@@ -1,4 +1,4 @@
-import type { IPredmet, ISimplePredmet } from "@/types/IPredmet";
+import type { IPredmet } from "@/types/IPredmet";
 import { Footer } from "@/components/footer"
 import { Header } from "@/components/header/header"
 import Navbar from "@/components/navbar/navbar"
@@ -36,13 +36,6 @@ export default async function InformaticPage() {
                             </div>
                         </Link>
                     ))}
-                    {/* {predmets.map(predmet => (
-                        <Link href={`/${predmet.link}`} key={predmet.title}>
-                            <div className=" my-8 font-semibold " >
-                                <h2>{predmet.title}</h2>
-                            </div>
-                        </Link>
-                    ))} */}
                 </nav>
             </Navbar>
             <Header backMode={true} navbarMode={true} titlePage={informatic.title} />

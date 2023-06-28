@@ -1,5 +1,5 @@
 'use client'
-import './header.scss'
+import './header.module.scss'
 import GoBack from "../go-back/go-back"
 import NavbarIcon from "../navbar-icon/navbar-icon"
 

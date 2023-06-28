@@ -1,5 +1,5 @@
 import { Footer } from "@/components/footer"
-import { Header } from "@/components/header/header"
+// import { Header } from "@/components/header/header"
 // import type { IPredmet, ISimplePredmet } from "@/types/IPredmet";
 
 export const metadata = {
@@ -25,7 +25,7 @@ export default async function Psysics() {
 
     return (
         <>
-            <Header titlePage={'Главная'} />
+            {/* <Header titlePage={'Главная'} /> */}
             <div className="mt-7vh flex flex-col justify-center items-center h-93vh w-100vw">
                 <div className="bg-blue-300 w-2/3 h-1/5 mb-5">
                     {/* <h1>{maths?.description}</h1> */}

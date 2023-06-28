@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header/header"
 import Link from "next/link"
 import UserInfo from "@/components/user-info/user-info"
-import './home.scss' 
+import './home.module.scss' 
 
 async function getPredmets() {
     const response = await fetch(`${process.env.URL}/predmets`, {

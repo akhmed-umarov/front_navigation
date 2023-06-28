@@ -2,7 +2,7 @@
 import { useAppSelector , useAppDispatch } from '@/store/hooks';
 import { logout } from '@/store/slice/auth.slice';
 import { Button } from '@chakra-ui/react';
-import './user-info.scss'
+import './user-info.module.scss'
 
 const UserInfo = () => {
     const user = useAppSelector(state=>state.auth.user)

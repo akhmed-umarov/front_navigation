@@ -28,7 +28,6 @@ export async function generateMetadata({ params }: { params: { thema: string } }
     }
 }
 
-// //любое название
 const ThemaPage = async ({ params }: { params: { thema: string } }) => {
     const thema = await getOneThemaInformatic(params.thema)
     console.log(thema);
