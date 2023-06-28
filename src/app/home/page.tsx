@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Header } from "@/components/header/header"
 import Link from "next/link"
 import UserInfo from "@/components/user-info/user-info"
-import './home.module.scss' 
+import styled from './home.module.scss' 
 
 async function getPredmets() {
     const response = await fetch(`${process.env.URL}/predmets`, {
@@ -26,17 +26,17 @@ export default async function Home() {
             <Header navbarMode={true} titlePage={'Главная страница приложения'} />
             <Navbar>
                 <UserInfo />
-                <nav className="navbar">
+                <nav className={styled.navbar}>
                     {predmetsArray.map(predmet => (
                         <Link key={predmet.title} href={`/${predmet.link}`} >
-                            <div className="navbar_link" >
+                            <div className={styled.navbar_link}>
                                 <h2>{predmet.title}</h2>
                             </div>
                         </Link>
                     ))}
                 </nav>
             </Navbar>
-            <div className=" h-max-h-screen overflow-hidden">
+            <div className="h-max-h-screen overflow-hidden">
                 <div className="mt-7vh flex flex-col justify-center items-center h-86vh w-100vw">
                     <div className="w-3/4 ">
                         <TextBlock text={'Наше приложение предназначено для того чтобы вы смогли получить знания в тех сферах которые вам интересны'} />
