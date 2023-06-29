@@ -47,9 +47,7 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
         }
       }}
     >
-      <ul>
         {children}
-      </ul>
     </m.nav>
   );
 };

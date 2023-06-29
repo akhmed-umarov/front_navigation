@@ -1,9 +1,9 @@
 import './tailwind.css'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import { Providers } from '@/components/providers'
 import AuthCheck from '@/components/auth.check'
 
-const inter = Inter({ subsets: ['latin'] })
+const monterat = Montserrat({ subsets: ['latin']})
 
 export const metadata = {
   title: 'ГГНТУ диплом',
@@ -19,7 +19,7 @@ export default function RootLayout({
 
   return (
     <html lang="ru">
-      <body className={inter.className}>
+      <body className={monterat.className}>
         <Providers>
           <main className='overflow-hidden'>
             <AuthCheck>

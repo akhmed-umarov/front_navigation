@@ -23,9 +23,11 @@ export default async function Home() {
     const predmetsArray = await getPredmets()
     return (
         <>
-            <Header navbarMode={true} titlePage={'Главная страница приложения'} />
+            <Header navbarMode={true} titlePage={'Главная страница'} />
             <Navbar>
+                <div>
                 <UserInfo />
+                </div>
                 <nav className={styled.navbar}>
                     {predmetsArray.map(predmet => (
                         <Link key={predmet.title} href={`/${predmet.link}`} >

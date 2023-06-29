@@ -14,17 +14,17 @@
 
 .switch.true {
   justify-content: flex-start;
-  background-color: rgb(149, 149, 208);
+  background-color: rgb(182, 226, 228);
   transition: background-color 0.4s ease 0s;
   .handle { 
-  background-color: rgb(15, 66, 183);
+  background-color: rgb(255, 255, 255);
   transition: background-color 0.4s ease 0s;
   }
 }
 
 .handle {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   background-color: white;
   border-radius: 40px;
 }

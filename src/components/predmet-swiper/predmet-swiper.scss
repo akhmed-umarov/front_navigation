@@ -9,11 +9,11 @@
 }
 
 .my-slide { 
-    height: 50vh;
-    width: 70vw;
+    height: 60vh;
+    width: 80vw;
     @apply m-auto flex justify-center items-center w-4/5;
     &-block {
-        @apply shadow-2xl hover:shadow-sm hover:font-extrabold w-50vw h-30vh px-5 py-8 duration-500 justify-center flex items-center;
+        @apply shadow-2xl hover:shadow-sm hover:font-extrabold w-65vw h-40vh px-5 py-8 duration-500 justify-center flex items-center;
         border-radius: 50%;
     }
 }
