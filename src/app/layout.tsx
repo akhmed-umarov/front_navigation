@@ -3,11 +3,13 @@ import { Montserrat } from 'next/font/google'
 import { Providers } from '@/components/providers'
 import AuthCheck from '@/components/auth.check'
 
+
 const monterat = Montserrat({ subsets: ['latin']})
 
 export const metadata = {
   title: 'ГГНТУ диплом',
   description: 'Студент Умаров Ильяс',
+  manifest: './manifest.json'
 }
 
 export default function RootLayout({
