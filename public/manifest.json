@@ -3,7 +3,7 @@
     "background_color": "#93cbf4",
     "display": "standalone",
     "scope": "/",
-    "start_url": "https://studio-rum.vercel.app/home",
+    "start_url": "https://studio-rum.vercel.app/",
     "short_name": "Diplom",
     "description": "Diplom Umarov Ilyas",
     "name": "Studio-room",
