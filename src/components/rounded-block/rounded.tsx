@@ -9,7 +9,7 @@ interface Props {
 }
 const RoundedBlock = ({ title, iconUrl, link }: Props) => {
     return (
-        <div>
+        <div className="flex flex-col justify-center items-center">
             <div className="m-2 flex justify-center items-center rounded-full bg-blue-500 w-32 h-32 xl:w-25vw xl:h-20vh shadow-xl" key={title}>
                 <Link href={`${link}`} className="flex justify-center items-center">
                     <Image alt='иконка темы' className="rounded-full duration-300 hover:shadow-sm hover:scale-125 " width={50} height={50} src={`${API_URL}/uploads/${iconUrl}`}/>
