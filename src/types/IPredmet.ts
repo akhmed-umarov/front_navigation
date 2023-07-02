@@ -4,15 +4,14 @@ export enum PredmetName {
   maths = "maths",
 }
 
-import type IThemas from "./IThemas";
-
 export type IThemasInPredmet = { 
   title: string,
-  link: string
+  link: string,
+  iconUrl: string
 }
 
 export interface IPredmet {
-  themas: Omit<IThemas, "body" | "predmet" | "imgUrl">[];
+  themas: IThemasInPredmet[];
   description: string;
   imgUrl: string;
   title: string;

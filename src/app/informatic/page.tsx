@@ -11,7 +11,7 @@ export const metadata = {
 }
 
 async function getDataInformatic() {
-    const res = await fetch(`${process.env.URL}/informatic`, { cache: 'force-cache' });
+    const res = await fetch(`${process.env.URL}/informatic`, { cache: 'no-cache' });
     return await res.json() as IPredmet;
 }
 
@@ -45,7 +45,7 @@ export default async function InformaticPage() {
                 </div>
                 <div className="w-5/6 justify-center h-2/3 flex flex-wrap">
                     {informatic.themas.map((thema) => (
-                        <RoundedBlock link={`informatic/${thema.link}`} key={thema.title} title={thema.title} description={thema.description} />
+                        <RoundedBlock link={`informatic/${thema.link}`} key={thema.title} title={thema.title} iconUrl={thema.iconUrl} />
                     ))}
                 </div>
             </div>
