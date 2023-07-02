@@ -28,10 +28,10 @@ export const Header = ({ navbarMode = false, titlePage, backMode = false, backLi
                     <GoBack linkBack={backLink} />
                 </div>
             </div>
-            <div className="text-xl text-white">
-                {titlePage}
+            <div className="text-md text-white">
+                {titlePage == 'Начало программирования на Python' ? 'Программирование Python' : titlePage}
             </div>
-            <div className={`${navbarMode ? '' : 'opacity-0'}`}>
+            <div className={`${navbarMode ? '' : 'opacity-0 w-4'}`}>
                 <NavbarIcon />
             </div>
         </header>
