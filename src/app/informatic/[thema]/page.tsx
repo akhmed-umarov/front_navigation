@@ -20,14 +20,14 @@ const getInformaticPredmet = async () => {
 }
 
 export async function generateStaticParams() {
-    // const informatic: IPredmet = await getInformaticPredmet()
-    // return informatic.themas.map((thema) => ({
-    //     slug: thema.link
-    // }))
-    const informatic = ['information' , 'systems' , 'logical-math', 'algoritms' , 'python-start']
-    return informatic.map((link) => ({
-        slug: link
+    const informatic: IPredmet = await getInformaticPredmet()
+    return informatic.themas.map((thema) => ({
+        slug: thema.link
     }))
+    // const informatic = ['information' , 'systems' , 'logical-math', 'algoritms' , 'python-start']
+    // return informatic.map((link) => ({
+    //     slug: link
+    // }))
 }
 
 export async function generateMetadata({ params }: { params: { thema: string } }): Promise<Metadata> {
