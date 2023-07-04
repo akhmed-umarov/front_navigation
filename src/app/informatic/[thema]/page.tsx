@@ -4,8 +4,8 @@ import { Metadata } from "next/types";
 import ThemaBlock from "@/components/thema-block/thema-block";
 import IThema from "@/types/IThemas";
 
-const getOneThemaInformatic = async (thema: string) => {
-    const response = await fetch(`${process.env.URL}/informatic/${thema}` , {
+const getOneThemaInformatic = async (link: string) => {
+    const response = await fetch(`${process.env.URL}/informatic/${link}` , {
         cache: 'no-cache'
     })
     if (!response.ok) {
@@ -20,9 +20,13 @@ const getInformaticPredmet = async () => {
 }
 
 export async function generateStaticParams() {
-    const informatic: IPredmet = await getInformaticPredmet()
-    return informatic.themas.map((thema) => ({
-        slug: thema.link
+    // const informatic: IPredmet = await getInformaticPredmet()
+    // return informatic.themas.map((thema) => ({
+    //     slug: thema.link
+    // }))
+    const informatic = ['information' , 'systems' , 'logical-math', 'algoritms' , 'python-start']
+    return informatic.map((link) => ({
+        slug: link
     }))
 }
 
