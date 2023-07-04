@@ -6,7 +6,9 @@ import IThema from "@/types/IThemas";
 
 const getOneThemaInformatic = async (link: string) => {
     const response = await fetch(`${process.env.URL}/informatic/${link}` , {
-        cache: 'force-cache'
+        next: { 
+            revalidate: 60
+        }
     })
     if (!response.ok) {
         throw new Error("Такой страницы нет!");
@@ -24,10 +26,6 @@ export async function generateStaticParams() {
     return informatic.themas.map((thema) => ({
         slug: thema.link
     }))
-    // const informatic = ['information' , 'systems' , 'logical-math', 'algoritms' , 'python-start']
-    // return informatic.map((link) => ({
-    //     slug: link
-    // }))
 }
 
 export async function generateMetadata({ params }: { params: { thema: string } }): Promise<Metadata> {
