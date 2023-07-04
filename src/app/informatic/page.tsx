@@ -41,7 +41,6 @@ export default async function InformaticPage() {
                     ))}
                 </div>
             </div>
-            {/* <Footer /> */}
         </>
     )
 }
