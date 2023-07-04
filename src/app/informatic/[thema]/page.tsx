@@ -6,7 +6,7 @@ import IThema from "@/types/IThemas";
 
 const getOneThemaInformatic = async (link: string) => {
     const response = await fetch(`${process.env.URL}/informatic/${link}` , {
-        cache: 'no-cache'
+        cache: 'force-cache'
     })
     if (!response.ok) {
         throw new Error("Такой страницы нет!");
